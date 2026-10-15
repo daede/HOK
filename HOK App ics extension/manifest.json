@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "HOK App iCal Exporter",
+  "version": "1.0",
+  "description": "Exportiert den Vorlesungsplan der HOK App als iCal Datei.",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://app.hok.ac.at/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

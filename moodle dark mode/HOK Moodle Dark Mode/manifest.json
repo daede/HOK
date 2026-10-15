@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "HOK WebLearn Dark Mode",
+  "version": "1.0",
+  "description": "Custom dark mode theme and inverted logo for HOK WebLearn.",
+  "icons": {
+    "128": "images/hok-logo-inverted.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://weblearn.fh-kufstein.ac.at/*",
+        "https://weblearn.hok.ac.at/*"
+      ],
+      "css": [
+        "darkmode.css"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/hok-logo-inverted.png"
+      ],
+      "matches": [
+        "https://weblearn.fh-kufstein.ac.at/*",
+        "https://weblearn.hok.ac.at/*"
+      ]
+    }
+  ]
+}

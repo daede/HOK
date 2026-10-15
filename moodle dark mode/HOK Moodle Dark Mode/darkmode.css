@@ -1,0 +1,436 @@
+/* ==========================================================================
+   HOK WEBLEARN DARK MODE - COMPLETE STYLES & ANTI-FLASH
+   ========================================================================= */
+
+/* Immediate anti-flash background lock on root before full class parse */
+html:not(:not(.darkmode)) {
+    background-color: #121212 !important;
+}
+
+html.darkmode,
+html.darkmode body,
+html.darkmode #topofscroll,
+html.darkmode .main-inner,
+html.darkmode #page,
+html.darkmode #page-wrapper,
+html.darkmode #page-content,
+html.darkmode #region-main-box,
+html.darkmode #region-main,
+html.darkmode [role="main"] {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+/* 2. Top Header, Primary Navbar & Logo Layout Lock */
+#page-wrapper > nav.navbar.fixed-top {
+    border-bottom: #0b8f6a 14px solid !important;
+    height: 108px !important;
+}
+
+html.darkmode header,
+html.darkmode .navbar,
+html.darkmode .fixed-top,
+html.darkmode #page-header {
+    background-color: #323232 !important;
+}
+
+/* Lock navbar brand container alignment to prevent layout jumping */
+html.darkmode .navbar-brand,
+.navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Scaled logo fitting within 108px navbar height */
+html.darkmode .navbar-brand img,
+html.darkmode .logo img,
+html.darkmode .site-name img,
+html.darkmode [data-region="logo"] img,
+.navbar-brand img {
+    max-height: 70px !important;
+    height: auto !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
+}
+
+/* Base Nav Link styling in Header */
+html.darkmode .navbar .nav-link,
+html.darkmode .navbar .dropdown-toggle {
+    color: #cccccc !important;
+    background-color: transparent !important;
+}
+
+/* Active, Focused & Open/Expanded Dropdown Toggles */
+html.darkmode .navbar .nav-link.active,
+html.darkmode .navbar .nav-link[aria-expanded="true"],
+html.darkmode .navbar .dropdown-toggle[aria-expanded="true"],
+html.darkmode .navbar .show > .nav-link,
+html.darkmode .navbar .show > .dropdown-toggle,
+html.darkmode .navbar .nav-item.show .nav-link,
+html.darkmode .navbar .nav-link:focus,
+html.darkmode .navbar .nav-link:active {
+    background-color: #242424 !important;
+    color: #10b981 !important;
+    border: 1px solid #0b8f6a !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+}
+
+/* Hover state for nav links */
+html.darkmode .navbar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #10b981 !important;
+}
+
+/* 3. Secondary Navigation & Tabs */
+html.darkmode .secondary-navigation,
+html.darkmode .secondary-navigation .moremenu,
+html.darkmode .nav-tabs {
+    background-color: #1e1e1e !important;
+    border-bottom-color: #333333 !important;
+}
+
+html.darkmode .secondary-navigation .nav-link {
+    color: #cccccc !important;
+}
+
+html.darkmode .secondary-navigation .nav-link:hover,
+html.darkmode .secondary-navigation .nav-link:focus {
+    color: #10b981 !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-bottom-color: #0b8f6a !important;
+}
+
+html.darkmode .secondary-navigation .nav-link.active {
+    color: #10b981 !important;
+    border-bottom-color: #0b8f6a !important;
+    background-color: transparent !important;
+}
+
+/* 4. Moodle Tables, Grade Lists & Striped Rows Overrides */
+html.darkmode table,
+html.darkmode .generaltable,
+html.darkmode .table {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #333333 !important;
+}
+
+html.darkmode .table th,
+html.darkmode .table td,
+html.darkmode .generaltable th,
+html.darkmode .generaltable td,
+html.darkmode #overview-grade td,
+html.darkmode #overview-grade th {
+    background-color: transparent !important;
+    color: #e0e0e0 !important;
+    border-color: #333333 !important;
+}
+
+/* Table Header styling */
+html.darkmode .table thead th,
+html.darkmode .generaltable thead th {
+    background-color: #282828 !important;
+    color: #ffffff !important;
+    border-bottom: 2px solid #444444 !important;
+}
+
+/* Alternating Striped Rows */
+html.darkmode .table-striped tbody tr:nth-of-type(odd),
+html.darkmode .generaltable tbody tr:nth-of-type(odd) {
+    background-color: #242424 !important;
+}
+
+html.darkmode .table-striped tbody tr:nth-of-type(even),
+html.darkmode .generaltable tbody tr:nth-of-type(even) {
+    background-color: #1a1a1a !important;
+}
+
+/* Row Hover */
+html.darkmode .table-hover tbody tr:hover,
+html.darkmode .generaltable tbody tr:hover {
+    background-color: #2e2e2e !important;
+}
+
+/* Links inside tables */
+html.darkmode .generaltable td a,
+html.darkmode .table td a {
+    color: #10b981 !important;
+}
+
+html.darkmode .generaltable td a:hover,
+html.darkmode .table td a:hover {
+    color: #34d399 !important;
+    text-decoration: underline !important;
+}
+
+/* Dim empty table rows */
+html.darkmode tr.emptyrow td {
+    background-color: #161616 !important;
+    border-color: #262626 !important;
+}
+
+/* 5. Headings & Text Colors */
+html.darkmode h1, html.darkmode h2, html.darkmode h3, 
+html.darkmode h4, html.darkmode h5, html.darkmode h6,
+html.darkmode .card-title, html.darkmode .h1, html.darkmode .h2,
+html.darkmode .instancename, html.darkmode .sectiontitle h2 {
+    color: #ffffff !important;
+}
+
+html.darkmode a,
+html.darkmode .aalink {
+    color: #10b981 !important;
+}
+
+html.darkmode a:hover,
+html.darkmode .aalink:hover {
+    color: #34d399 !important;
+}
+
+html.darkmode .text-muted,
+html.darkmode .dimmed_text,
+html.darkmode .muted,
+html.darkmode .categoryname {
+    color: #a0a0a0 !important;
+}
+
+/* Editor inline text colors override */
+html.darkmode .activity-altcontent [style*="color"],
+html.darkmode .no-overflow [style*="color"] {
+    color: #a7f3d0 !important;
+}
+
+/* 6. Course Sections & Activity Containers */
+html.darkmode .course-section,
+html.darkmode .pagesechead,
+html.darkmode .tiles-activity-container,
+html.darkmode .activity-item {
+    background-color: #1a1a1a !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 6px !important;
+    padding: 10px !important;
+    margin-bottom: 12px !important;
+    color: #e0e0e0 !important;
+}
+
+html.darkmode .sectionbuttons .sectionbutton {
+    background-color: #2a2a2a !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #cccccc !important;
+}
+
+html.darkmode .sectionbuttons .sectionbutton:hover {
+    background-color: #333333 !important;
+    color: #10b981 !important;
+}
+
+/* 7. Moodle Tiles Format Overrides */
+html.darkmode #format-tiles-multi-section-page,
+html.darkmode .tiles,
+html.darkmode .tile {
+    background-color: transparent !important;
+}
+
+html.darkmode .tile-content,
+html.darkmode .tile-bg,
+html.darkmode .tile-clickable {
+    background-color: #1e1e1e !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+html.darkmode .tile:hover .tile-content {
+    background-color: #262626 !important;
+    border-color: #0b8f6a !important;
+}
+
+html.darkmode .tile-icon i,
+html.darkmode .tileiconcontainer {
+    color: #10b981 !important;
+}
+
+/* 8. Cards, Drawers, Modals & Dashboard Dark Wrapper Overrides */
+html.darkmode .dashboard-card,
+html.darkmode .dashboard-card-deck .card,
+html.darkmode .card,
+html.darkmode .card-body,
+html.darkmode .block,
+html.darkmode .block-myoverview,
+html.darkmode .block_timeline,
+html.darkmode .bg-white,
+html.darkmode .bg-light,
+html.darkmode .drawer,
+html.darkmode .modal-content,
+html.darkmode .popover,
+html.darkmode .list-group-item {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html.darkmode .card-footer,
+html.darkmode .card-footer.bg-white,
+html.darkmode .card-footer.menu {
+    background-color: #1e1e1e !important;
+    border-top: 1px solid #333333 !important;
+}
+
+html.darkmode .progress {
+    background-color: #2d2d2d !important;
+}
+
+html.darkmode .progress-bar {
+    background-color: #0b8f6a !important;
+}
+
+/* 9. Dropdown Menus & Items */
+html.darkmode .coursemenubtn,
+html.darkmode .btn-link.coursemenubtn {
+    color: #bbbbbb !important;
+    background-color: transparent !important;
+}
+
+html.darkmode .coursemenubtn:hover,
+html.darkmode .coursemenubtn:focus {
+    color: #10b981 !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.darkmode .dropdown-menu {
+    background-color: #222222 !important;
+    border: 1px solid #444444 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.darkmode .dropdown-item {
+    color: #d0d0d0 !important;
+    background-color: transparent !important;
+}
+
+html.darkmode .dropdown-item:hover,
+html.darkmode .dropdown-item:focus {
+    background-color: #2e2e2e !important;
+    color: #10b981 !important;
+}
+
+/* 10. Forms & Controls */
+html.darkmode input[type="text"],
+html.darkmode input[type="search"],
+html.darkmode textarea,
+html.darkmode select,
+html.darkmode .form-control,
+html.darkmode .custom-select {
+    background-color: #2d2d2d !important;
+    color: #ffffff !important;
+    border: 1px solid #444444 !important;
+}
+
+html.darkmode .btn-secondary,
+html.darkmode .btn-light,
+html.darkmode .btn-outline-secondary {
+    background-color: #2d2d2d !important;
+    color: #ffffff !important;
+    border-color: #444444 !important;
+}
+
+html.darkmode .btn-outline-secondary:hover {
+    background-color: #383838 !important;
+    color: #10b981 !important;
+    border-color: #0b8f6a !important;
+}
+
+/* 11. Footer Button Stack (Column Layout) & Integrated Toggle Styling */
+[data-region="footer-container-popover"],
+#boost-union-footer-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+[data-region="footer-container-popover"] .btn,
+#boost-union-footer-buttons .btn,
+#weblearn-darkmode-toggle {
+    margin: 0 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+html.darkmode #weblearn-darkmode-toggle,
+html.darkmode .btn-footer-popover,
+html.darkmode #back-to-top {
+    background-color: #2b2b2b !important;
+    color: #10b981 !important;
+    border: 1px solid #0b8f6a !important;
+}
+
+html.darkmode #weblearn-darkmode-toggle:hover,
+html.darkmode .btn-footer-popover:hover,
+html.darkmode #back-to-top:hover {
+    background-color: #383838 !important;
+    color: #34d399 !important;
+}
+
+/* 12. Fixes: Top Section Action Buttons & Hardcoded Inline Tag Backgrounds */
+.above-tiles-buttons,
+.above-tiles-buttons .sectionbutton {
+    background-color: #2b2b2b !important;
+    border-color: #0b8f6a !important;
+    color: #10b981 !important;
+}
+
+.above-tiles-buttons .sectionbutton:hover {
+    background-color: #383838 !important;
+    color: #34d399 !important;
+}
+
+.above-tiles-buttons .sectionbutton i {
+    color: inherit !important;
+}
+
+.above-tiles-buttons .dropdown-menu {
+    background-color: #222222 !important;
+    border: 1px solid #444444 !important;
+}
+
+.above-tiles-buttons .dropdown-item {
+    color: #d0d0d0 !important;
+}
+
+.above-tiles-buttons .dropdown-item:hover {
+    background-color: #2e2e2e !important;
+    color: #10b981 !important;
+}
+
+html.darkmode span[style*="background-color"] {
+    background-color: #242424 !important;
+    color: #a7f3d0 !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html.darkmode span[style*="background-color"]:hover {
+    background-color: #2e2e2e !important;
+    color: #34d399 !important;
+}
+
+/* 13. Activity Header & Description Containers */
+html.darkmode .activity-header,
+html.darkmode [data-region="activity-information"],
+html.darkmode .activity-description {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}

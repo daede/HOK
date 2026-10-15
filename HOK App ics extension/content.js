@@ -246,6 +246,17 @@
     return icsLines.join('\r\n');
   }
 
+  function normalizeRepoPath(pathInput) {
+    let cleanPath = (pathInput || 'hok_vorlesungsplan.ics').replace(/^\/+/, '').trim();
+    if (!cleanPath) return 'hok_vorlesungsplan.ics';
+    if (cleanPath.endsWith('/')) {
+      cleanPath += 'hok_vorlesungsplan.ics';
+    } else if (!cleanPath.toLowerCase().endsWith('.ics')) {
+      cleanPath += '/hok_vorlesungsplan.ics';
+    }
+    return cleanPath;
+  }
+
   // --- GITHUB API SYNCHRONISATION ---
   async function syncToGitHub(token, repoInput, branchInput, pathInput, icsContent) {
     const cleanRepo = repoInput.replace(/^https?:\/\/github\.com\//i, '').replace(/\.git$/i, '').trim();
@@ -256,7 +267,7 @@
     const owner = repoParts[0];
     const repo = repoParts[1];
     const branch = (branchInput || 'main').trim();
-    const path = (pathInput || 'hok_vorlesungsplan.ics').replace(/^\/+/, '').trim();
+    const path = normalizeRepoPath(pathInput);
 
     if (!token || !token.trim()) {
       throw new Error('Bitte gib dein GitHub Personal Access Token (PAT) an.');
@@ -1017,9 +1028,12 @@
                   <input type="text" class="hok-input" id="hok-gh-branch" value="${escapeHtml(ghBranch)}" />
                 </div>
                 <div class="hok-form-group">
-                  <label class="hok-form-label">Dateipfad:</label>
-                  <input type="text" class="hok-input" id="hok-gh-path" value="${escapeHtml(ghPath)}" />
+                  <label class="hok-form-label">Dateipfad / Unterordner:</label>
+                  <input type="text" class="hok-input" id="hok-gh-path" placeholder="z. B. ICS/hok_vorlesungsplan.ics" value="${escapeHtml(ghPath)}" />
                 </div>
+              </div>
+              <div class="hok-help-text" style="margin-top: -3px; margin-bottom: 6px;">
+                💡 Unterordner werden unterstützt, z. B. <code>ICS/hok_vorlesungsplan.ics</code> oder einfach <code>ICS/</code> (wird auf GitHub automatisch angelegt).
               </div>
             </div>
 
@@ -1249,7 +1263,8 @@
     // Wenn bereits ein gespeichertes GitHub Repo vorhanden ist, Link vorbereiten
     if (ghRepo && ghToken) {
       const cleanRepo = ghRepo.replace(/^https?:\/\/github\.com\//i, '').replace(/\.git$/i, '').trim();
-      const rawUrl = `https://raw.githubusercontent.com/${cleanRepo}/${ghBranch}/${ghPath}`;
+      const normPath = normalizeRepoPath(ghPath);
+      const rawUrl = `https://raw.githubusercontent.com/${cleanRepo}/${ghBranch}/${normPath}`;
       updateGcalLinks(rawUrl);
     }
 
@@ -1340,7 +1355,9 @@
         return;
       }
       const ics = buildICalContent(filteredEvents, includeModeCheckbox.checked);
-      triggerDownload(ics, ghPathInput.value.trim() || 'hok_vorlesungsplan.ics');
+      const normPath = normalizeRepoPath(ghPathInput.value);
+      const filename = normPath.split('/').pop() || 'hok_vorlesungsplan.ics';
+      triggerDownload(ics, filename);
     });
 
     // GitHub Sync Button

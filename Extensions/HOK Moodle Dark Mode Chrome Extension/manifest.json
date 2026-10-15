@@ -4,7 +4,18 @@
   "version": "1.0",
   "description": "Custom dark mode theme and inverted logo for HOK WebLearn.",
   "icons": {
-    "128": "images/hok-logo-inverted.png"
+    "16": "images/HOK-Moodle-Dark-Mode-Chrome-Extension-16px.png",
+    "32": "images/HOK-Moodle-Dark-Mode-Chrome-Extension-32px.png",
+    "48": "images/HOK-Moodle-Dark-Mode-Chrome-Extension-48px.png",
+    "128": "images/HOK-Moodle-Dark-Mode-Chrome-Extension-128px.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/HOK-Moodle-Dark-Mode-Chrome-Extension-16px.png",
+      "32": "images/HOK-Moodle-Dark-Mode-Chrome-Extension-32px.png",
+      "48": "images/HOK-Moodle-Dark-Mode-Chrome-Extension-48px.png",
+      "128": "images/HOK-Moodle-Dark-Mode-Chrome-Extension-128px.png"
+    }
   },
   "content_scripts": [
     {

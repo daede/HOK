@@ -1,10 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "HOK App iCal Exporter",
-  "version": "1.0",
-  "description": "Exportiert den Vorlesungsplan der HOK App als iCal Datei.",
+  "name": "HOK App iCal & Google Calendar Sync",
+  "version": "1.1",
+  "description": "Exportiert und synchronisiert den Vorlesungsplan der HOK App via GitHub mit Google Kalender.",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.github.com/*"
   ],
   "content_scripts": [
     {

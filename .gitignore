@@ -1,2 +1,5 @@
-text
+# Ignore ical files
 *.ics
+
+# Ignore Krita working files
+*.kra
